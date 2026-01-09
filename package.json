@@ -1,0 +1,17 @@
+{
+    "name": "miet-chatbot-v1",
+    "version": "1.0.0",
+    "description": "MIET Student Helpdesk AI Chatbot",
+    "scripts": {
+        "start": "run.bat",
+        "backend": "cd backend && call venv\\Scripts\\activate && python main.py",
+        "frontend": "cd frontend && npm run dev",
+        "install-all": "npm install --prefix frontend && cd backend && python -m venv venv && call venv\\Scripts\\activate && pip install -r requirements.txt"
+    },
+    "keywords": [],
+    "author": "MIET",
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^9.1.2"
+    }
+}

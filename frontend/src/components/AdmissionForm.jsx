@@ -202,7 +202,7 @@ const AdmissionForm = () => {
         </div>
 
         <div className="admission-header">
-          <h1 style={{ background: 'linear-gradient(135deg, #003366, #00509d)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>MIET Admissions 2026</h1>
+          <h1 style={{ background: 'linear-gradient(135deg, #003366, #00509d)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: 'clamp(1.8rem, 5vw, 2.8rem)' }}>M.I.E.T.Arts & Science College</h1>
           <p>
             {step === 1 && "Start your professional journey with your details."}
             {step === 2 && "Choose your specialization from our departments."}

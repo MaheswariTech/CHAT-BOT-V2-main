@@ -13,9 +13,17 @@ const Home = () => {
                 zIndex: 100
             }}>
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--primary)', fontWeight: 'bold', fontSize: '1.5rem' }}>
-                        <GraduationCap size={32} />
-                        <span>MIET Arts & Science</span>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        color: 'var(--primary)',
+                        fontWeight: '800',
+                        fontSize: 'clamp(1.2rem, 4vw, 1.6rem)',
+                        letterSpacing: '-0.5px'
+                    }}>
+                        <GraduationCap size={32} style={{ flexShrink: 0 }} />
+                        <span>M.I.E.T.Arts & Science College</span>
                     </div>
                     <div style={{ display: 'flex', gap: '30px', fontWeight: '500', alignItems: 'center' }}>
                         <a href="#home">Home</a>

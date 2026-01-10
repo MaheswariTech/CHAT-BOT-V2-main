@@ -228,7 +228,7 @@ async def chat(request: ChatRequest):
         history = session_histories[session_id]["history"]
 
         # 3. Setup Prompt for the Agent
-        system_template = """You are the MIET AI Student Support Agent, a helpful, intelligent, and friendly assistant for MIET Arts and Science College.
+        system_template = """You are the MIET AI Student Support Agent, a helpful, intelligent, and friendly assistant for M.I.E.T.Arts & Science College.
 
         YOUR GOAL: Provide accurate, helpful, and "human-like" answers to student queries based on the provided college documents.
 
@@ -439,10 +439,11 @@ async def submit_admission(data: dict):
                    data.get('prevCollege'),
                    submitted_at))
         
+        application_id = c.lastrowid
         conn.commit()
         conn.close()
         
-        print(f"NEW ADMISSION STORED: {data.get('fullName')} for {data.get('course')}")
+        print(f"NEW ADMISSION STORED: {data.get('fullName')} for {data.get('course')} (ID: {application_id})")
         
         # Send confirmation email
         email_sent = False
@@ -451,7 +452,7 @@ async def submit_admission(data: dict):
         course_name = data.get('course')
         
         if student_email:
-            email_sent = send_confirmation_email(student_email, student_name, course_name)
+            email_sent = send_confirmation_email(student_email, student_name, course_name, application_id, submitted_at)
 
         if email_sent:
             return {"status": "success", "email_sent": True, "message": "Application submitted successfully! A confirmation email has been sent."}
